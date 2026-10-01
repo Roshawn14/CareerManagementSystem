@@ -108,4 +108,22 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+} 
+
+.link-button {
+  border: none;
+  background: none;
+  color: #551a8b;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.submit-button {
+  background-color: #0645a5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 50px;
+  cursor: pointer;
 }
