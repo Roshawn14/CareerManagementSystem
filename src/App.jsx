@@ -103,9 +103,9 @@ function App() {
 
             </section> 
             <section id='right'>
-  <div>
-    <h1>IMAGE</h1>
-  </div>
+                  <div>
+                    <h1>IMAGE</h1>
+                  </div>
             </section>
 
          </section> 

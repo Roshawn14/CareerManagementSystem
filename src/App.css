@@ -1,7 +1,3 @@
-/* Navigation styles */
-
-
-
 
 /* Styles for Login h1 */
 .loginDiv{
@@ -23,7 +19,6 @@ div h1{
   width: 600px;
 }
 
-/* EVERY ROW HAS THE EXACT SAME LAYOUT */
 .formField {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -90,7 +85,8 @@ div h1{
 .rootSec {
   display: flex;
   flex-direction: row ;
-  justify-content: space-between;
+  justify-content:safe;
+  padding: 10rem ;
   gap: 20rem;
   
   place-items: center;
@@ -102,6 +98,9 @@ div h1{
     gap: 18px;
   }
 }
+
+
+
 
 
 
