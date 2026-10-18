@@ -1,5 +1,5 @@
 import React from 'react'
-import  '../Dashboard.css'
+import  './Pages/Stylesheets/Sidebar.css'
 import logo from '../assets/CareerManagelogo.png'; 
 
 import { sidebarData } from './sidebarData'
