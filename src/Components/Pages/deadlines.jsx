@@ -1,11 +1,15 @@
 import Sidebar from "../SidebarTemp";
+import "./Stylesheets/Deadline.css";
 
 function Deadlines() {
   return (
-    <div>
+    <div className="deadlinePage">
       <Sidebar />
-      <h1>Deadlines</h1>
-      <p>Keep track of upcoming application deadlines.</p>
+
+      <main>
+        <h1>Deadlines</h1>
+        <p>Keep track of upcoming application deadlines.</p>
+      </main>
     </div>
   );
 }

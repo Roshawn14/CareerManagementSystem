@@ -1,0 +1,140 @@
+.ApplicationPage {
+  display: flex;
+}
+
+.applicationHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+#pDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#applicationTitle {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#helpertext {
+  margin-left: 30px;
+}
+
+.tableoptions {
+  display: flex;
+  width: 98%;
+  border: 1px solid grey;
+  margin-left: 10px;
+}
+
+.tableoptions p {
+  margin: 20px;
+}
+
+.applicationsTable {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+/* Table heading */
+.interviewsTable thead {
+  background-color: #f8fafc;
+}
+
+.applicationsTable th {
+  padding: 18px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+/* Table cells */
+.applicationsTable td {
+  padding: 18px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+/* Highlight rows on hover */
+.applicationsTable tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.applicationsTable tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Remove the bottom border from the last row */
+.applicationsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badge */
+.statusBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Action buttons */
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actionButtons button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButtons button svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Edit button */
+.editButton {
+  color: #2563eb;
+}
+
+.editButton:hover {
+  background-color: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* Delete button */
+.deleteButton {
+  color: #e41c38;
+}
+
+.deleteButton:hover {
+  background-color: #fef2f2;
+  border-color: #fca5a5;
+}

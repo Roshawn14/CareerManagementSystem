@@ -1,12 +1,15 @@
 import Sidebar from "../SidebarTemp";
+import "./Stylesheets/settings.css";
 
 function settings() {
   return (
-    <div>
+    <div className="settingsPage">
       <Sidebar />
 
-      <h1>Settings</h1>
-      <p>Keep track of Profile</p>
+      <main>
+        <h1>Settings</h1>
+        <p>Keep track of Profile</p>
+      </main>
     </div>
   );
 }
