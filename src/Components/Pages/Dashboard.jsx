@@ -1,6 +1,12 @@
 import React from "react";
 import Sidebar from "../SidebarTemp";
 import "./Stylesheets/Dashboard.css";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import AddIcon from "@mui/icons-material/Add";
+import WorkIcon from "@mui/icons-material/Work";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 function DashBoard() {
   return (
@@ -128,7 +134,7 @@ function DashBoard() {
 
           <div className="trackCard">
             <div className="headerDiv">
-              <h3>Upcoming Deadlines</h3>
+              <h3>Upcoming Interviews</h3>
               <button>View all</button>
             </div>
 
@@ -164,11 +170,112 @@ function DashBoard() {
                 <div>
                   <p>Logo</p>
                   <p>Title</p>
-
                   <p>15 days left</p>
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div className="cardList3">
+          <div className="recentApplications">
+            <div className="recentApplicationHeader">
+              <p>Recent Applications</p>
+              <button>See All Applications</button>
+            </div>
+
+            <table className="applicationsTable">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Position</th>
+                  <th>Date Applied</th>
+                  <th>Deadline</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Google</td>
+                  <td>Software Developer</td>
+                  <td>November 13, 2026</td>
+                  <td>November 30, 2026</td>
+                  <td>
+                    <span className="statusBadge">Applied</span>
+                  </td>
+                  <td>
+                    <div className="actionButtons">
+                      <button
+                        className="editButton"
+                        aria-label="Edit application"
+                      >
+                        <EditIcon />
+                      </button>
+
+                      <button
+                        className="deleteButton"
+                        aria-label="Delete application"
+                      >
+                        <DeleteIcon />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Google</td>
+                  <td>Software Developer</td>
+                  <td>November 13, 2026</td>
+                  <td>November 30, 2026</td>
+                  <td>
+                    <span className="statusBadge">Applied</span>
+                  </td>
+                  <td>
+                    <div className="actionButtons">
+                      <button
+                        className="editButton"
+                        aria-label="Edit application"
+                      >
+                        <EditIcon />
+                      </button>
+
+                      <button
+                        className="deleteButton"
+                        aria-label="Delete application"
+                      >
+                        <DeleteIcon />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="quickActions">
+            <p>Quick Actions</p>
+
+            <button>
+              <AddIcon size={18} />
+              Add Application
+            </button>
+
+            <button>
+              <WorkIcon size={18} />
+              View All Applications
+            </button>
+
+            <button>
+              <CalendarMonthIcon size={18} />
+              View Interviews
+            </button>
+
+            <button>
+              <AccessTimeIcon size={18} />
+              View Deadlines
+            </button>
           </div>
         </div>
       </main>

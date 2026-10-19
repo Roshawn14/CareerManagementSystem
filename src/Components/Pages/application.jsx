@@ -1,10 +1,15 @@
+import Sidebar from "../SidebarTemp";
+
 function applications() {
-    return (
-      <div>
-        <h1>Applications</h1>
+  return (
+    <div className="Interviews page">
+      <Sidebar />
+      <main>
         <p>View and manage your job applications here.</p>
-      </div>
-    );
-  }
-  
-  export default applications;
+      </main>
+      <h1>Applications</h1>
+    </div>
+  );
+}
+
+export default applications;
