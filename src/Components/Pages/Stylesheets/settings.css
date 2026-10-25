@@ -1,3 +1,221 @@
+/* Main Page */
 .settingsPage {
   display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #263449;
+}
+
+.settingsMain {
+  flex: 1;
+  min-width: 0;
+  padding: 40px;
+}
+
+/* Header - Matches Other Pages */
+.settingsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#settingsTitle {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+#helperText {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Form */
+.settingsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1000px;
+}
+
+/* Settings Cards */
+.settingsCard {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+/* Section Header */
+.settingsSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.settingsIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #dbeafe;
+  color: #023e8a;
+}
+
+.settingsSectionHeader h2 {
+  margin: 0 0 6px;
+  color: #1e293b;
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.settingsSectionHeader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Input Grid */
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+}
+
+.settingsField {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 9px;
+}
+
+.settingsField.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.settingsField label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.settingsField input {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border: 1px solid #d5dce6;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #334155;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.settingsField input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.settingsField input::placeholder {
+  color: #94a3b8;
+}
+
+/* Password Hint */
+.passwordHint {
+  margin: 22px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Action Buttons */
+.settingsActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 24px;
+}
+
+.saveSettingsBtn,
+.logoutSettingsBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.saveSettingsBtn {
+  border: 1px solid #023e8a;
+  background: #023e8a;
+  color: #ffffff;
+}
+
+.saveSettingsBtn:hover {
+  background: #0353b4;
+}
+
+.logoutSettingsBtn {
+  border: 1px solid #fecaca;
+  background: #ffffff;
+  color: #b91c1c;
+}
+
+.logoutSettingsBtn:hover {
+  background: #fef2f2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settingsMain {
+    padding: 24px 16px;
+  }
+
+  .settingsCard {
+    padding: 22px 18px;
+  }
+
+  #settingsTitle {
+    font-size: 24px;
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .settingsField.fullWidth {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .settingsActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .settingsActions button {
+    width: 100%;
+  }
 }

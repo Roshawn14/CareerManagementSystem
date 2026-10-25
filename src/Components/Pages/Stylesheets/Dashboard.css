@@ -1,4 +1,12 @@
-/* Dashboard styles */
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html,
 body,
@@ -7,166 +15,310 @@ body,
   padding: 0;
   width: 100%;
   min-height: 100%;
-  box-sizing: border-box;
 }
 
-main {
-  width: 100%;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
 }
+
+button {
+  font-family: inherit;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboardPage {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.dashboardPage main {
+  flex: 1;
+  min-width: 0;
+  padding: 30px;
+}
+
+/* =========================
+   GREETING SECTION
+========================= */
 
 .greetingDiv {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 2.5rem;
+  margin: 0 0 28px;
 }
 
 #welcomeText {
-  margin-top: 30px;
-  font-size: 50px;
-  margin-bottom: 1.5rem;
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: #0f172a;
 }
 
 #note {
-  font-size: 24px;
-  margin-left: 10px;
-  margin-bottom: 16px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #64748b;
 }
 
-.dashboardPage {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+/* =========================
+   STATISTICS CARDS
+========================= */
 
 .statsContainer {
-  display: flex;
-  margin-left: 10px;
-}
-
-.cardList2 {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin: 0 0 26px;
 }
 
 .statCard {
-  border: gray 1px solid;
-  padding: 0;
-  margin: 10px;
-  width: 15rem;
-  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 112px;
+  margin: 0;
+  padding: 22px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.07);
+}
+
+.statCard p:first-child {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.statCard p:last-child {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: #0f172a;
+}
+
+/* =========================
+   MIDDLE DASHBOARD CARDS
+========================= */
+
+.cardList2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 26px;
 }
 
 .trackCard {
-  border: gray 1px solid;
-  margin: 20px;
-  width: 25rem;
+  min-width: 0;
+  margin: 0;
+  padding: 22px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
 }
+
+.trackCard h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Headers for deadlines and interviews */
 
 .headerDiv {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.headerDiv h3 {
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .headerDiv button {
+  flex-shrink: 0;
+  padding: 7px 10px;
   border: none;
-  padding: 0;
-  margin: 0;
-  background-color: white;
+  border-radius: 7px;
+  background-color: transparent;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-ul {
-  list-style-type: none;
-  padding: 16px;
+.headerDiv button:hover {
+  background-color: #eff6ff;
 }
 
-ul li div {
+/* Lists inside dashboard cards */
+
+.trackCard ul {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
 }
+
+.trackCard ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.trackCard ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.trackCard ul li:first-child {
+  padding-top: 0;
+}
+
+.trackCard ul li > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.trackCard ul li p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.trackCard ul li p:last-child {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* =========================
+   RECENT APPLICATIONS SECTION
+========================= */
 
 .cardList3 {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
+  gap: 22px;
+  width: 100%;
+  margin: 0;
+}
+
+.recentApplications {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 22px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
 }
 
 .recentApplicationHeader {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.recentApplicationHeader p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .recentApplicationHeader button {
-  border: none;
-  background-color: white;
-  color: blue;
+  flex-shrink: 0;
+  padding: 9px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.recentApplications {
-  border: 1px solid grey;
-  padding: 16px;
-  width: 70%;
-  overflow-x: auto;
-  margin-top: 25px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+.recentApplicationHeader button:hover {
+  background-color: #dbeafe;
+  border-color: #93c5fd;
 }
 
-.applicationsTable thead {
-  background-color: #f8fafc;
-}
-
-.tableContainer {
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 25px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
+/* =========================
+   APPLICATIONS TABLE
+========================= */
 
 .applicationsTable {
   width: 100%;
-  min-width: 850px;
+  min-width: 720px;
   border-collapse: collapse;
   text-align: left;
-  font-family: Arial, sans-serif;
-  color: #1f2937;
+  color: #334155;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Table heading */
 .applicationsTable thead {
   background-color: #f8fafc;
 }
 
 .applicationsTable th {
-  padding: 18px 20px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: 15px 14px;
+  border-bottom: 1px solid #e2e8f0;
   color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  border-bottom: 1px solid #e5e7eb;
+  letter-spacing: 0.5px;
   white-space: nowrap;
 }
 
-/* Table cells */
 .applicationsTable td {
-  padding: 18px 20px;
-  font-size: 14px;
+  padding: 16px 14px;
   border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
   white-space: nowrap;
 }
 
-/* Highlight rows on hover */
 .applicationsTable tbody tr {
   transition: background-color 0.2s ease;
 }
@@ -175,41 +327,43 @@ ul li div {
   background-color: #f8fafc;
 }
 
-/* Remove the bottom border from the last row */
 .applicationsTable tbody tr:last-child td {
   border-bottom: none;
 }
 
 /* Status badge */
+
 .statusBadge {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: 20px;
-  background-color: #dcfce7;
-  color: #15803d;
+  background-color: #dbeafe;
+  color: #1d4ed8;
   font-size: 12px;
   font-weight: 600;
-  text-transform: capitalize;
+  white-space: nowrap;
 }
 
-/* Action buttons */
+/* Edit and delete buttons */
+
 .actionButtons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .actionButtons button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   background-color: #ffffff;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .actionButtons button svg {
@@ -217,7 +371,6 @@ ul li div {
   height: 17px;
 }
 
-/* Edit button */
 .editButton {
   color: #2563eb;
 }
@@ -227,9 +380,8 @@ ul li div {
   border-color: #93c5fd;
 }
 
-/* Delete button */
 .deleteButton {
-  color: #e41c38;
+  color: #dc2626;
 }
 
 .deleteButton:hover {
@@ -237,42 +389,43 @@ ul li div {
   border-color: #fca5a5;
 }
 
-/* quick actions styles */
+/* =========================
+   QUICK ACTIONS
+========================= */
 
 .quickActions {
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 320px;
-  padding: 24px;
+  min-width: 0;
+  padding: 22px;
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  font-family: Arial, sans-serif;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
 }
 
-/* Card heading */
 .quickActions p {
   margin: 0 0 8px;
   font-size: 18px;
   font-weight: 700;
-  color: #1e293b;
+  color: #0f172a;
 }
 
-/* Action buttons */
 .quickActions button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 11px;
   width: 100%;
-  padding: 13px 15px;
+  min-height: 46px;
+  padding: 12px 14px;
   border: 1px solid #e2e8f0;
   border-radius: 9px;
   background-color: #f8fafc;
   color: #334155;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -280,21 +433,141 @@ ul li div {
     color 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
-.quickActions button:hover {
-  background-color: #eff6ff;
-  border-color: #93c5fd;
+.quickActions button svg {
+  flex-shrink: 0;
+  font-size: 19px;
   color: #2563eb;
-  transform: translateX(3px);
 }
 
-/* Keyboard accessibility */
-.quickActions button:focus-visible {
+.quickActions button:hover {
+  transform: translateX(2px);
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.quickActions button:focus-visible,
+.headerDiv button:focus-visible,
+.recentApplicationHeader button:focus-visible,
+.actionButtons button:focus-visible {
   outline: 3px solid #93c5fd;
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
-/* Click effect */
 .quickActions button:active {
   transform: scale(0.98);
+}
+
+/* =========================
+   RESPONSIVE LAYOUT
+========================= */
+
+@media (max-width: 1400px) {
+  .statsContainer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cardList2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cardList2 .trackCard:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .cardList3 {
+    grid-template-columns: minmax(0, 1fr) 250px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .dashboardPage main {
+    padding: 24px;
+  }
+
+  .cardList3 {
+    grid-template-columns: 1fr;
+  }
+
+  .quickActions {
+    max-width: none;
+  }
+
+  .quickActions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboardPage main {
+    padding: 18px;
+  }
+
+  .greetingDiv {
+    margin-bottom: 22px;
+  }
+
+  .statsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .statCard {
+    min-height: 100px;
+    padding: 16px;
+  }
+
+  .statCard p:last-child {
+    font-size: 26px;
+  }
+
+  .cardList2 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cardList2 .trackCard:first-child {
+    grid-column: auto;
+  }
+
+  .trackCard,
+  .recentApplications,
+  .quickActions {
+    padding: 17px;
+  }
+
+  .recentApplicationHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recentApplications {
+    overflow-x: auto;
+  }
+
+  .applicationsTable {
+    min-width: 720px;
+  }
+
+  .cardList3 {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dashboardPage main {
+    padding: 12px;
+  }
+
+  .statsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  #welcomeText {
+    font-size: 27px;
+  }
+
+  #note {
+    font-size: 14px;
+  }
 }
