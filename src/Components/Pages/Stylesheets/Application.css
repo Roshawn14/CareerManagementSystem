@@ -138,3 +138,197 @@
   background-color: #fef2f2;
   border-color: #fca5a5;
 }
+
+/* Add Application Button */
+.addApplicationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  background: #023e8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addApplicationBtn:hover {
+  background: #0353b4;
+}
+
+/* Modal Background */
+.applicationModal {
+  width: min(800px, calc(100% - 32px));
+  max-height: 90vh;
+  padding: 0;
+  border: none;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #263449;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.applicationModal::backdrop {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.modalHeader h2 {
+  margin: 0 0 8px;
+  font-size: 23px;
+  color: #1e293b;
+}
+
+.modalHeader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.closeModalBtn {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 7px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.closeModalBtn:hover {
+  background: #e2e8f0;
+}
+
+/* Form Layout */
+.applicationForm {
+  padding: 24px 28px 28px;
+}
+
+.modalFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+.modalFormGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.modalFormGroup input,
+.modalFormGroup select,
+.modalFormGroup textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #d5dce6;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #334155;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.modalFormGroup input,
+.modalFormGroup select {
+  min-height: 43px;
+}
+
+.modalFormGroup textarea {
+  resize: vertical;
+}
+
+.modalFormGroup input:focus,
+.modalFormGroup select:focus,
+.modalFormGroup textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Side-by-side Date Fields */
+.modalFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Modal Footer Buttons */
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #e5eaf1;
+}
+
+.modalActions button {
+  min-height: 42px;
+  padding: 10px 17px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cancelModalBtn {
+  background: white;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.cancelModalBtn:hover {
+  background: #f1f5f9;
+}
+
+.saveApplicationBtn {
+  background: #023e8a;
+  color: white;
+  border: 1px solid #023e8a;
+}
+
+.saveApplicationBtn:hover {
+  background: #0353b4;
+}
+
+/* Mobile Layout */
+@media (max-width: 520px) {
+  .modalHeader,
+  .applicationForm {
+    padding: 20px;
+  }
+
+  .modalFormRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .modalActions button {
+    flex: 1;
+  }
+}
