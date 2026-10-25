@@ -138,3 +138,239 @@
   background-color: #fef2f2;
   border-color: #fca5a5;
 }
+
+/* Add Interview Button */
+.addInterviewBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  background-color: #023e8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addInterviewBtn:hover {
+  background-color: #0353b4;
+}
+
+/* Filter Buttons */
+.tableoptions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.tableoptions button {
+  padding: 10px 22px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tableoptions button:hover {
+  background-color: #e2e8f0;
+}
+
+.tableoptions button.activeFilter {
+  background-color: #023e8a;
+  color: white;
+  border-color: #023e8a;
+}
+
+/* Modal Overlay */
+.interviewModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Container */
+.interviewModal {
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.interviewModal .modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.interviewModal .modalHeader h2 {
+  margin: 0 0 8px;
+  font-size: 23px;
+  color: #1e293b;
+}
+
+.interviewModal .modalHeader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.interviewModal .closeModalBtn {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 7px;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+/* Form Layout */
+.interviewForm {
+  padding: 24px 28px 28px;
+}
+
+.interviewFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  min-width: 0;
+}
+
+.interviewFormGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.interviewFormGroup input,
+.interviewFormGroup select,
+.interviewFormGroup textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d5dce6;
+  border-radius: 7px;
+  background: white;
+  color: #334155;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.interviewFormGroup input:focus,
+.interviewFormGroup select:focus,
+.interviewFormGroup textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.interviewFormGroup textarea {
+  resize: vertical;
+}
+
+/* Date and Time Side by Side */
+.interviewFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Modal Action Buttons */
+.interviewModal .modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #e5eaf1;
+}
+
+.interviewModal .modalActions button {
+  padding: 11px 18px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.interviewModal .cancelModalBtn {
+  background: white;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.interviewModal .saveInterviewBtn {
+  background: #023e8a;
+  color: white;
+  border: none;
+}
+
+.interviewModal .saveInterviewBtn:hover {
+  background: #0353b4;
+}
+
+/* Status Badges */
+.interviewsTable .statusBadge.upcoming {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.interviewsTable .statusBadge.past {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Empty Table */
+.emptyTable {
+  padding: 40px !important;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .interviewModal .modalHeader,
+  .interviewForm {
+    padding: 20px;
+  }
+
+  .interviewFormRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .tableoptions {
+    flex-wrap: wrap;
+  }
+}
