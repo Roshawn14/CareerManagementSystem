@@ -1,16 +1,30 @@
-
-
 /* Styles for Login h1 */
-.loginDiv{
-text-align: left;
 
+* {
+  box-sizing: border-box;
 }
 
-.loginDiv h1{
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.loginDiv {
+  text-align: left;
+}
+
+.loginDiv h1 {
   margin-top: 6rem;
 }
 
-div h1{
+div h1 {
   margin-bottom: 6rem;
   font-weight: 450;
   color: #333;
@@ -64,7 +78,8 @@ div h1{
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
-.loginBtn, .signUpBtn {
+.loginBtn,
+.signUpBtn {
   width: 150px;
   font-size: 16px;
   padding: 8px 20px;
@@ -75,33 +90,46 @@ div h1{
   transition: border-color 0.3s;
   margin-bottom: 24px;
   margin-top: 24px;
-
 }
-
-
-
 
 /* section styles */
 
 .rootSec {
   display: flex;
-  flex-direction: row ;
-  justify-content:safe;
-  padding: 10rem ;
-  gap: 20rem;
-  
-  place-items: center;
-  flex-grow: 1;
-  border:none;
-
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  gap: 0;
+  margin: 0;
+  box-sizing: border-box;
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
     gap: 18px;
   }
 }
 
+#left {
+  width: 40%;
+  min-height: 100vh;
+  padding: 60px;
+  box-sizing: border-box;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+#right {
+  width: 60%;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
-
-
+#right img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
