@@ -316,6 +316,10 @@
   background: #0353b4;
 }
 
+main {
+  width: 80%;
+  padding: 30px;
+}
 /* Mobile Layout */
 @media (max-width: 520px) {
   .modalHeader,

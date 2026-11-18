@@ -554,6 +554,54 @@ button {
   }
 }
 
+.quickActionItem {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background-color: #f8fafc;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.quickActionItem svg {
+  flex-shrink: 0;
+  font-size: 19px;
+  color: #2563eb;
+}
+
+.dashboardError {
+  margin-bottom: 20px;
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.seeAllApplications {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0 5px;
+}
+
+.seeAllApplications button {
+  background-color: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.seeAllApplications button:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
 @media (max-width: 400px) {
   .dashboardPage main {
     padding: 12px;
